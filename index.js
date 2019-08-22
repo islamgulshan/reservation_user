@@ -35,7 +35,21 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use('/api',router);
 app.use('/', (req,res)=>{
 	res.send('my first');
+	
 });
-app.listen(process.env.PORT || port , () => {
-  console.log(`listening on port ${port}`);
+
+// Heroku 
+// app.listen(process.env.PORT || port , () => {
+//   console.log(`listening on port ${port}`);
+// });
+
+// Openshift
+
+
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+ 
+server.listen(server_port, server_ip_address, function () {
+  console.log( "Listening on " + server_ip_address + ", port " + server_port )
 });
+
