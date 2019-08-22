@@ -1,0 +1,289 @@
+Microsoft Windows [Version 10.0.17134.885]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\Gulshan>node -v
+v10.14.2
+
+C:\Users\Gulshan>:d
+C:\Users\Gulshan> d:
+
+D:\>mkdir myfirstproject
+
+D:\>npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: firstjs
+version: (1.0.0)
+description: for learning purpose
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: gulshan islam
+license: (ISC)
+About to write to D:\package.json:
+
+{
+  "name": "firstjs",
+  "version": "1.0.0",
+  "description": "for learning purpose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gulshan islam",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) npm WARN init canceled
+
+
+D:\>cd myfirstproject
+
+D:\myfirstproject>npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (myfirstproject)
+version: (1.0.0)
+description: for learning
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: gulshan islam
+license: (ISC)
+About to write to D:\myfirstproject\package.json:
+
+{
+  "name": "myfirstproject",
+  "version": "1.0.0",
+  "description": "for learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gulshan islam",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes)
+
+D:\myfirstproject>npm install express
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN myfirstproject@1.0.0 No repository field.
+
++ express@4.17.1
+added 50 packages from 37 contributors and audited 126 packages in 26.339s
+found 0 vulnerabilities
+
+
+D:\myfirstproject>npm install express --save
+npm WARN myfirstproject@1.0.0 No repository field.
+
++ express@4.17.1
+updated 1 package and audited 126 packages in 6.908s
+found 0 vulnerabilities
+
+
+D:\myfirstproject>npm install mongoose --save
+npm WARN myfirstproject@1.0.0 No repository field.
+
++ mongoose@5.6.9
+added 22 packages from 17 contributors and audited 165 packages in 12.251s
+found 0 vulnerabilities
+
+
+D:\myfirstproject>npm install body-parser --save
+npm WARN myfirstproject@1.0.0 No repository field.
+
++ body-parser@1.19.0
+updated 1 package and audited 197 packages in 4.877s
+found 0 vulnerabilities
+
+
+D:\myfirstproject>npm install core --save
+npm WARN deprecated compress-buffer@1.2.0: this has been created when no compression library existed for Node.js. This isn't the case for years
+npm WARN deprecated node-uuid@1.4.1: Use uuid module instead
+
+> base64@2.0.3 install D:\myfirstproject\node_modules\core\node_modules\base64
+> node-waf configure build
+
+'node-waf' is not recognized as an internal or external command,
+operable program or batch file.
+npm WARN myfirstproject@1.0.0 No repository field.
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! base64@2.0.3 install: `node-waf configure build`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the base64@2.0.3 install script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\Gulshan\AppData\Roaming\npm-cache\_logs\2019-08-19T10_37_52_413Z-debug.log
+
+D:\myfirstproject>npm install path --save
+npm WARN myfirstproject@1.0.0 No repository field.
+
++ path@0.12.7
+added 3 packages from 2 contributors and audited 201 packages in 6.818s
+found 0 vulnerabilities
+
+
+D:\myfirstproject>node index.js
+D:\myfirstproject\index.js:26
+app.use(bodyparser.urlencoded({ extended: false;}));
+                                               ^
+
+SyntaxError: Unexpected token ;
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:742:12)
+    at startup (internal/bootstrap/node.js:282:19)
+
+D:\myfirstproject>npm start
+npm ERR! missing script: start
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\Gulshan\AppData\Roaming\npm-cache\_logs\2019-08-19T11_01_53_991Z-debug.log
+
+D:\myfirstproject>node index.js
+D:\myfirstproject\index.js:26
+app.use(bodyparser.urlencoded({ extended: false;}));
+                                               ^
+
+SyntaxError: Unexpected token ;
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:742:12)
+    at startup (internal/bootstrap/node.js:282:19)
+
+D:\myfirstproject>node index.js
+D:\myfirstproject\index.js:26
+app.use(bodyparser.urlencoded({ extended: false;}));
+                                               ^
+
+SyntaxError: Unexpected token ;
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:742:12)
+    at startup (internal/bootstrap/node.js:282:19)
+
+D:\myfirstproject>node index.js
+D:\myfirstproject\index.js:26
+app.use(bodyparser.urlencoded({ extended: false;}));
+                                               ^
+
+SyntaxError: Unexpected token ;
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:742:12)
+    at startup (internal/bootstrap/node.js:282:19)
+
+D:\myfirstproject>node index.js
+D:\myfirstproject\index.js:26
+app.use(bodyparser.urlencoded({ extended: false;}));
+                                               ^
+
+SyntaxError: Unexpected token ;
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:742:12)
+    at startup (internal/bootstrap/node.js:282:19)
+
+D:\myfirstproject>node index.js
+D:\myfirstproject\index.js:26
+app.use(bodyparser.urlencoded({ extended: false;}));
+                                               ^
+
+SyntaxError: Unexpected token ;
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:742:12)
+    at startup (internal/bootstrap/node.js:282:19)
+
+D:\myfirstproject>node index.js
+internal/modules/cjs/loader.js:583
+    throw err;
+    ^
+
+Error: Cannot find module 'cors'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:581:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:507:25)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (D:\myfirstproject\index.js:4:12)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:742:12)
+    at startup (internal/bootstrap/node.js:282:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:743:3)
+
+D:\myfirstproject>npm install cors --save
+npm WARN myfirstproject@1.0.0 No repository field.
+
++ cors@2.8.5
+added 2 packages from 2 contributors and audited 204 packages in 370.735s
+found 0 vulnerabilities
+
+
+D:\myfirstproject>node index.js
+listening on port 3000
