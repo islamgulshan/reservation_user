@@ -33,6 +33,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // serving static content
 app.use(express.static(path.join(__dirname, "public")));
 app.use('/api',router);
+app.use('/', (req,res)=>{
+	res.send('my first');
+});
 app.listen(process.env.PORT || port , () => {
   console.log(`listening on port ${port}`);
 });
