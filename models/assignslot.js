@@ -12,9 +12,14 @@ const assignslotschema=mongoose.Schema({
         rel: "parkingslot_users"
 
     }
+    ,
+    currentdata:{
+        type:Date,
+        default: Date.now()
+    }
 }
 
 )
 
-assignslotschema.index({ PSId:1,SID:1},{ unique: true});
+assignslotschema.index({ PSId:1,SID:1,currentdata:1},{ unique: true});
 module.exports= mongoose.model('assignslot',assignslotschema);

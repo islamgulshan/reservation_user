@@ -21,6 +21,9 @@ const parkingSlotUserSchema=mongoose.Schema({
 	user_type: {
 		type:Number,
 		require:true
+	},
+	password:{
+		type:String
 	}
 },
 	{
@@ -30,5 +33,6 @@ const parkingSlotUserSchema=mongoose.Schema({
 
 
 )
+
 
 module.exports= mongoose.model('parkingslot_user',parkingSlotUserSchema);

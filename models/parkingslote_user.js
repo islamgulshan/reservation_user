@@ -1,4 +1,7 @@
 var mongoose= require('mongoose');
+var bcrypt=require("bcrypt-node");
+var SALT_WORK_FACTOR=10;
+
 const parkingslot_userschema=mongoose.Schema({
 	
 	name: {
@@ -22,6 +25,7 @@ const parkingslot_userschema=mongoose.Schema({
 		type:Number,
 		require:true
 	}
+
 },
 	{
 		timestamps:true
@@ -30,6 +34,31 @@ const parkingslot_userschema=mongoose.Schema({
 
 
 )
+
+parkingslot_userschema.pre('save',function  (next)){
+	var user=this;
+	//
+	iif(!user.isModified('password')){
+		return next();
+	}
+	//generate ]
+	bcrypt.genSalt(SALT_WORK_FACTOR , function(err,salt)){
+		if (err) return next();
+		bcrypt.hast(user.password,salt,null, function (err,hash)){
+			if (err) return next();
+			user.password=hash;
+			return next();
+		}
+	}
+
+}
+
+parkingslot_userschema.methods.compare= function (cadidatePassword,cb){
+	bcrypt.compare(cadidatePassword,this.password, function (err ,isMatch){
+		if (err) return next();
+		cb(null,isMatch);
+	})
+}
 
 
 module.exports= mongoose.model('parkingslot_user',parkingslot_userschema);

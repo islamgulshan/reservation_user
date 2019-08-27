@@ -133,3 +133,30 @@ api/enrollement/add
 		"CId" : "5d63c3c778ecb748b0f1a9f4"
 	}
 }
+
+## SESSION 8/26/2019
+
+## adding compose key and date entry on node and mongooes side  pakring  POST Api
+  
+
+#### URL For access 
+
+
+api/parking/slot/assign
+
+
+#### Json Fromat
+
+
+{
+	"assignslots" :
+	{
+		"PSId" : "5d64039fdc43072d4c0b50c2",
+		"SID":"5d63e28516bceb3a082774a0"
+	}
+}
+
+
+
+
+

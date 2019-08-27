@@ -1,6 +1,6 @@
 const parkingslot_userschema=require('../models/parkingSlotUser');
 
-// parking user insert 
+ // parking user insert 
 const parkingSlotSignUp =( req,res)=>{
 	let parkingslotsignup = new parkingslot_userschema(); 
 	parkingslotsignup.name=req.body.name;
