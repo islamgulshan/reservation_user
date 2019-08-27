@@ -33,8 +33,10 @@ router.post('/login',usercontoller.login);
 */
 
 router.post('/parking/slot/signup',parkingSotUserController.parkingSlotSignUp);
+router.post('/parking/slot/login',parkingSotUserController.parkingUserLogin);
 router.post('/parking/slot/add',parkingslotController.AddParkingSlot);
 router.post('/parking/slot/assign',parkingSlotAssignController.AssignSlot);
+
 
 
 /*

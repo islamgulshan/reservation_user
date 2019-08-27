@@ -1,5 +1,5 @@
 const parkingslot_userschema=require('../models/parkingSlotUser');
-
+var bcrypt=require("bcrypt-node");
  // parking user insert 
 const parkingSlotSignUp =( req,res)=>{
 	let parkingslotsignup = new parkingslot_userschema(); 
@@ -7,6 +7,7 @@ const parkingSlotSignUp =( req,res)=>{
 	parkingslotsignup.email=req.body.email;
 	parkingslotsignup.phone=req.body.phone;
 	parkingslotsignup.user_type=req.body.user_type;
+	parkingslotsignup.password=req.body.password;
 	 
 	parkingslotsignup.save( (err,userinfo) => {
 		if(err){
@@ -21,10 +22,43 @@ const parkingSlotSignUp =( req,res)=>{
 	})
 }
 
+ // parking user insert 
+ const parkingUserLogin =( req,res)=>{
 
+	// fetch user and test password verification
+	parkingslot_userschema.findOne({ email: req.body.email }, function(err, user) {
+		if(err){
+			res.status(500).json({
+				message: "error",
+				err
+			})
+		}
+		else{  
+			user.comparePassword(req.body.password, function(err, isMatch) {
+				if(err){
+					res.status(500).json({
+						message: "error",
+						err
+					})
+				}else{
+					res.status(200).json({
+						message: "Login Successfully",
+						isMatch
+					})
+				}
+				
+			});
+		 
+			
+		}
+
+		
+	});
+ }	
 
 
 // Module Exports
 module.exports={
-	parkingSlotSignUp
+	parkingSlotSignUp,
+	parkingUserLogin
 }

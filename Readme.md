@@ -157,6 +157,64 @@ api/parking/slot/assign
 }
 
 
+## SESSION 8/27/2019
+
+## adding password hash method   POST Api
+  
+
+#### URL For access 
+
+
+api/parking/slot/signup
+
+
+#### Json Fromat
+
+
+{
+	"parkingslot_users" :
+	{
+		{
+		"name":"gulshan isalm",
+		"email" : "gulshs@yopmail.com",
+		"phone" : "0092 335 3443510 ",
+		"user_type": 2,
+		"password": "abc123"
+		}
+	}
+}
+
+
+
+## Assigment
+
+## Compare password with mongoes Schema POST Api
+  
+
+#### URL For access 
+
+
+api/parking/slot/login
+
+
+#### Json Fromat
+
+
+{
+	"parkingslot_user" :
+	{ 
+		{
+			
+			"email": "gulsh3@yopmail.com",
+			"password":"abcsa123"
+		}
+		
+	}
+}
+
+
+
+
 
 
 
