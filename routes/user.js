@@ -33,7 +33,9 @@ router.post('/login',usercontoller.login);
 */
 
 router.post('/parking/slot/signup',parkingSotUserController.parkingSlotSignUp);
+
 router.post('/parking/slot/login',parkingSotUserController.parkingUserLogin);
+
 router.post('/parking/slot/add',parkingslotController.AddParkingSlot);
 router.post('/parking/slot/assign',parkingSlotAssignController.AssignSlot);
 
@@ -60,6 +62,7 @@ router.post('/enrollement/add',enrollementController.AddEnrollement);
 
 //
 //reservation
+
 router.post('/add_reservation',reservationControllers.add_reservation);
 router.get('/get_all_reservation',reservationControllers.get_all_reservation);
 router.get("/getReservationId", reservationControllers.getReservationId);

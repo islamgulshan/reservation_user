@@ -3,6 +3,10 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 var path = require("path");
+ const parkingSotUserController= require('./controllers/parkingSotUserController');
+
+var jwt= require("jsonwebtoken");
+
 
 mongoose.connection.openUri('mongodb://localhost:27017/myfirstproject', { useNewUrlParser:true});
 mongoose.connection.on('connected',()=>{
@@ -22,18 +26,18 @@ const port = 3000;
 var app = express();
 app.use(cors());
 
-
-
-
-
 // body-parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // serving static content
 app.use(express.static(path.join(__dirname, "public")));
-app.use('/api',router);
 
+//
+
+app.use('/api',varifyToken, router);
+
+ app.post('/login',parkingSotUserController.parkingUserLogin);
 
 app.use('/', (req,res)=>{
 	res.send('git my name HELLO  ');
@@ -45,6 +49,37 @@ app.use('/', (req,res)=>{
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
+
+
+// varify token
+function varifyToken(req,res,next){
+	const bearHeader= req.headers['authorization'];
+	// check if bearer is undefined 
+	if (typeof bearHeader !='undefined'){
+		//splite at a space
+		const bearer=bearHeader.split(' ');
+		//get token from array
+		const bearerToken=bearer[1];
+		//ret token
+		req.token= bearerToken;
+		// next middleware
+		jwt.varifyToken(req.token,'secretkey', (err,auData) => {
+			if(err){
+				res.status(403).send(err);
+				//res.sendStatus(403);
+			}else{
+				req.auData=auData;
+				next();
+			}
+		});
+	}else{
+		res.status(403).json({
+			msg : "Forbidden"
+		})
+	}	
+}
+
+
 
 
 // Heroku 
