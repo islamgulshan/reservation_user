@@ -1,3 +1,34 @@
+
+# Crud operation
+### Get All
+
+#### api/get_all_reservation
+#### Get Fromat
+
+{ "id" : "5d5dac07cfc7fa3a0c4cedbd" }
+
+## add reservation by post
+#### URL For access
+
+#### api/add_reservation
+#### Json Fromat
+
+{ "reservation" : { "name":"gulshan", "email":"gulshan@yopmail.com", "message":"hi my message", "room_type":"class A", "arrival_date":"04/4/12 11:00 AM, EST", "deprate_date":"04/4/12 11:00 AM, EST", "no_of_guest":1, "free_packup":1, "flight_number":"fia289", "specail_requests":"need urgents" } }
+### Delete operation by ID Get
+#### URL For access
+
+#### api/getReservationId
+#### Json Fromat
+
+{ "id":"5d5dac07cfc7fa3a0c4cedbd" }
+### Update POST Api
+#### URL For access
+
+#### api/updatReservation
+#### Json Fromat
+
+{ "assignslots" : { id:"5d5dac07cfc7fa3a0c4cedbd", "name":"gulshan", "email":"gulshan@yopmail.com", "message":"hi my message", "room_type":"class A", "arrival_date":"04/4/12 11:00 AM, EST", "deprate_date":"04/4/12 11:00 AM, EST", "no_of_guest":1, "free_packup":1, "flight_number":"fia289", "specail_requests":"need urgents" } }
+
 #   Parking Application
 
 ## Parking User Signup and Slot Assign Application in Node js 
@@ -68,6 +99,23 @@ api/parking/slot/assign
 
 
 
+
+
+
+
+## User login Through JWT Library
+### Compare password with jwt and generate tokten URL For access login
+#### Json Fromat
+
+{ "parkingslot_user" : { {
+
+					"email": "gulsh3@yopmail.com",
+					"password":"abcsa123"
+				}
+
+}
+
+}
 
 
 #   Project Student and Course RelationShip
